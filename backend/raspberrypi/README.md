@@ -136,7 +136,7 @@ python app.py
 
 ---
 
-## 🧩 Commandes LCD (Arduino)
+## 🧩 Commandes pour LCD (envoyé à Arduino)
 
 | Code | Action |
 |------|--------|
