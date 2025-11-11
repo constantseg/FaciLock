@@ -1,5 +1,5 @@
 # FaciLock
-# Système de verrouillage connecté intelligent
+## Système de verrouillage connecté intelligent
 
 > **« La clé, c’est vous. »**  
 > Un système de sécurité moderne basé sur la reconnaissance faciale, le contrôle mobile et des modules embarqués sur Raspberry Pi.
