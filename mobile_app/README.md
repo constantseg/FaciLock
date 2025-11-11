@@ -74,4 +74,4 @@ L’application communique avec le **serveur Flask** du Raspberry Pi à travers 
 
 
 ###  ⚙️ Configuration :
-- Modifier les variables `BASE_URL` et `TOKEN` de les fichiers `authorized.tsx`, `historique.tsx` et `index.tsx` dans */app/(tabs)/*
+- Modifier les variables `BASE_URL` et `TOKEN` de les fichiers `authorized.tsx`, `historique.tsx` et `index.tsx` dans `/app/(tabs)/`
