@@ -179,7 +179,7 @@ Lorsqu’aucun visage n’est reconnu :
 🎓 Étudiant BTS SIO SISR 
 📅 Année : 2025  
 📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
-🌐 [github.com/ConstantSegretain](https://github.com/ConstantSeg)
+🌐 [github.com/ConstantSeg](https://github.com/ConstantSeg)
 
 ---
 
