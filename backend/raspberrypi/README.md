@@ -101,7 +101,7 @@ cd backend
 pip install -r requirements.txt
 ```
 
-**Exemple de `requirements.txt` :**
+**Contenu de `requirements.txt` :**
 ```
 flask
 flask-cors
@@ -131,7 +131,7 @@ python app.py
 | **Bouton poussoir** | Déclenche la reconnaissance faciale |
 | **Relais** | Commande le verrou (GPIO16) |
 | **Arduino** | Gère le digicode et l’écran LCD (UART `/dev/ttyACM0`) |
-| **Caméra IR** | Capture des visages et vidéos |
+| **Caméra** | Capture des visages et vidéos |
 | **Écran 3.5"** | Interface utilisateur (affichage OpenCV) |
 
 ---
@@ -178,7 +178,7 @@ Lorsqu’aucun visage n’est reconnu :
 **Constant Segretain**  
 🎓 Étudiant BTS SIO SISR 
 📅 Année : 2025  
-📫 [constantsegretain@gmail](mailto:constantsegretain@gmail)  
+📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
 🌐 [github.com/ConstantSegretain](https://github.com/ConstantSeg)
 
 ---
