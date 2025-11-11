@@ -135,10 +135,12 @@ FaciLock/
 |       ├── app.py
 |       ├── icon/
 │       ├── tetes/
-│       └── requirements.txt
+│       ├── requirements.txt
+|       └── ...
 ├── mobile_app/           # Application mobile (React Native)
-│   ├── lib/
-│   └── pubspec.yaml
+│   ├── app/
+│   ├── assets/
+|   └── ...
 ├── docs/                 # Images, schémas, ressources
 │   ├── banniere-facilock.png
 │   ├── schema-simplifier-algorithme-backend.png
