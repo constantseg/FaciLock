@@ -60,22 +60,18 @@ L’application communique avec le **serveur Flask** du Raspberry Pi à travers 
 
 ---
 
-## 🖼️ Aperçu de l’application
+## Aperçu de l’application
 
 <p align="center">
   <img src="/docs/design_app.png" alt="Design de l'application mobile">
 </p>
 
-🎬 [Voir la démo vidéo](/docs/demo_app.mp4)
-
 ---
 
 ## 🚀 Installation
 
-### 🧩 Si Flutter :
-```bash
-# Installation des dépendances
-flutter pub get
 
-# Lancement sur un émulateur ou smartphone
-flutter run## 🧰 Technologies utilisées
+
+
+###  ⚙️ Configuration :
+- Modifier les variables 'BASE_URL' et 'TOKEN' de les fichiers 'authorized.tsx', 'historique.tsx' et 'index.tsx' dans '/app/(tabs)/'
