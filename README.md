@@ -126,11 +126,16 @@
 
 ```
 FaciLock/
-├── backend/              # Serveur Flask + reconnaissance faciale
-│   ├── app.py
-│   ├── icon/
-│   ├── tetes/
-│   └── requirements.txt
+├── backend/
+│   ├── arduino/          # Arduino
+|   |   ├── digicode.ino
+|   |   ├── lcd-digicode-audio.ino
+│   |   └── lcd-digicode.ino
+|   └── raspberrypi       # Serveur Flask + reconnaissance faciale
+|       ├── app.py
+|       ├── icon/
+│       ├── tetes/
+│       └── requirements.txt
 ├── mobile_app/           # Application mobile (React Native)
 │   ├── lib/
 │   └── pubspec.yaml
