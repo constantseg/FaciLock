@@ -1,6 +1,8 @@
 # FaciLock - Système de verrouillage connecté intelligent
+<p align="center">
+  <img src="docs/bannière-facilock.png" alt="Banière FaciLock">
+</p>
 
-> **« La clé, c’est vous. »**  
 > Un système de sécurité moderne basé sur la reconnaissance faciale, le contrôle mobile et des modules embarqués sur Raspberry Pi.
 
 ---
