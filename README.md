@@ -150,6 +150,11 @@ FaciLock/
 
 ---
 
+<p>
+  <img src="docs/ecran-raspberry.png" width="700" alt="ecran raspberry">
+</p>
+
+
 ## 👤 Auteur
 
 **Constant Segretain**  
