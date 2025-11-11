@@ -66,3 +66,9 @@ Le système :
 
 ---
 
+![Schéma simplifié du câblage ](docs/Schema-cablage-simple.png)
+
+
+
+
+
