@@ -32,8 +32,8 @@ Le système :
 
 ### Schéma plus représentatif de l'algorithme
 
-<p align="center">
-  <img src="docs/schema-simplifier-algorithme-backend.png" width="300" alt="Schéma de l'algorithme">
+<p>
+  <img src="docs/schema-simplifier-algorithme-backend.png" width="700" alt="Schéma de l'algorithme">
 </p>
 ---
 
