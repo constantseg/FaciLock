@@ -67,7 +67,7 @@
 ## 🧱 Structure du dossier
 
 ```
-backend/
+raspberrypi/
 ├── app.py                     # Script principal
 ├── icon/                      # Icônes affichées à l'écran
 │   ├── locked.png
