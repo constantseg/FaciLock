@@ -86,7 +86,7 @@
 > Toutes les routes nécessitent un **token de sécurité** :  
 > `?token=afsfr-356hytjdhiy-huy5429876njyu-y-gfdrsertgry`
 
-📘 Voir les détails complets → [`backend/README.md`](backend/raspberrypi/README.md)
+📘 Voir les détails complets → [`backend/raspberrypi/README.md`](backend/raspberrypi/README.md)
 
 ---
 
