@@ -151,7 +151,7 @@ FaciLock/
 ---
 
 <p>
-  <img src="docs/ecran-raspberry.png" width="700" alt="ecran raspberry">
+  <img src="docs/ecran-raspberry.png" width="400" alt="ecran raspberry">
 </p>
 
 
