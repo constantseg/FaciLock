@@ -56,7 +56,9 @@ L’application communique avec le **serveur Flask** du Raspberry Pi à travers 
 
 ### ⚙️ Paramètres
 - Configuration de l’adresse IP / API du serveur Flask.
-- Mode clair / sombre.
+  - Modifier les variables `BASE_URL` *(ip ou url du serveur flask)* et `TOKEN` *(token du serveur flask)* dans les fichiers `authorized.tsx`, `historique.tsx` et `index.tsx` dans `/app/(tabs)/`
+
+
 
 ---
 
@@ -70,8 +72,3 @@ L’application communique avec le **serveur Flask** du Raspberry Pi à travers 
 
 ## 🚀 Installation
 
-
-
-
-###  ⚙️ Configuration :
-- Modifier les variables `BASE_URL` et `TOKEN` de les fichiers `authorized.tsx`, `historique.tsx` et `index.tsx` dans `/app/(tabs)/`
