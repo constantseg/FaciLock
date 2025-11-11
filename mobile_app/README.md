@@ -66,7 +66,7 @@ L’application communique avec le **serveur Flask** du Raspberry Pi à travers 
   <img src="docs/design_app.png" width="300" alt="Design de l'application mobile">
 </p>
 
-🎬 [Voir la démo vidéo](docs/demo_app.mp4)
+🎬 [Voir la démo vidéo](/docs/demo_app.mp4)
 
 ---
 
