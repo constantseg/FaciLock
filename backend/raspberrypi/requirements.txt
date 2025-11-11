@@ -1,0 +1,8 @@
+flask
+flask-cors
+requests
+opencv-python
+face_recognition
+gpiozero
+pyserial
+numpy
