@@ -56,31 +56,48 @@
 ## ⚙️ Technologies utilisées
 
 ### 🧩 Backend (Raspberry Pi)
+
 - **Langage :** Python  
 - **Librairies principales :**
   - `face_recognition`
   - `opencv-python`
   - `flask`
   - `gpiozero`
+  - `pyserial`
+  - `requests`
 - **API REST Flask :**
-  - `POST /door/open` → ouvrir la porte  
-  - `GET /notifications` → récupérer les alertes  
-  - `DELETE /notifications` → effacer les alertes  
-  - `GET /persons` → lister les utilisateurs  
-  - `POST /persons` → ajouter un visage  
-  - `DELETE /persons/{id}` → supprimer un visage  
 
-📘 Voir le backend complet ici → [`backend/README.md`](backend/README.md)
+| Méthode | Endpoint | Description |
+|----------|-----------|-------------|
+| `POST` | `/unlock` | Déverrouille la porte manuellement |
+| `GET` | `/notifications` | Liste les vidéos capturées des visiteurs inconnus |
+| `DELETE` | `/notifications/<video_id>` | Supprime une vidéo/notification |
+| `GET` | `/authorized` | Liste les personnes autorisées |
+| `POST` | `/authorized` | Ajoute une personne avec ses images (base64) |
+| `PUT` | `/authorized/<old_name>` | Renomme une personne |
+| `DELETE` | `/authorized/<name>` | Supprime une personne |
+| `GET` | `/authorized/<name>/images` | Liste les images associées à un visage |
+| `GET` | `/authorized/<name>/image` | Récupère une image spécifique |
+| `DELETE` | `/authorized/<name>/image` | Supprime une image spécifique |
+| `POST` | `/authorized_capture` | Capture directement des images depuis la caméra |
+| `POST` | `/api/register_push_token` | Enregistre un token Expo pour les notifications push |
+| `GET` | `/stream` | Envoie en temps réel l’état du verrou (`lock_status`) via SSE |
+
+> Toutes les routes nécessitent un **token de sécurité** :  
+> `?token=afsfr-356hytjdhiy-huy5429876njyu-y-gfdrsertgry`
+
+📘 Voir les détails complets → [`backend/README.md`](backend/README.md)
 
 ---
 
 ### 📲 Application mobile
-- Contrôle du verrou à distance  
-- Réception des notifications  
-- Interface simple, claire et réactive  
-- Connexion sécurisée à l’API Flask du Raspberry Pi  
 
-📘 Voir l’app mobile ici → [`mobile_app/README.md`](mobile_app/README.md)
+- Contrôle du verrou à distance  
+- Réception des notifications push (via Expo)  
+- Interface intuitive et claire  
+- Communication directe avec le serveur Flask du Raspberry Pi  
+
+📘 Voir l’app mobile → [`mobile_app/README.md`](mobile_app/README.md)
 
 ---
 
@@ -129,10 +146,10 @@ FaciLock/
 ## 👤 Auteur
 
 **Constant Segretain**  
-🎓 Élève en **BTS SIO SISR**  
+🎓 Élève en **Bac Pro SN** — futur **BTS SIO SISR (Cybersécurité)**  
 📅 Année : 2025  
 📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
-🌐 [github.com/constantsegretain@gmail.com](https://github.com/constantsegretain@gmail.com)
+🌐 [github.com/ConstantSeg](https://github.com/ConstantSeg)
 
 ---
 
