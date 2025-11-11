@@ -30,6 +30,8 @@ Le système :
 4. Sinon → notification d’échec envoyée à l’application mobile.
 5. Après un délai sans action, retour à l’écran d'accueil.
 
+###Schéma plus représentatif
+
 ---
 
 ## ⚙️ Technologies utilisées
@@ -65,8 +67,8 @@ Le système :
 | DFPlayer Mini | Sons d’ouverture / fermeture |
 
 ---
-
-![Schéma simplifié du câblage ](docs/Schema-cablage-simple.png)
+### Schéma simplifié du câblage
+![Schéma simplifié du câblage](docs/Schema-cablage-simple.png)
 
 
 
