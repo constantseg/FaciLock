@@ -25,11 +25,11 @@
 Il combine plusieurs technologies pour créer une solution de verrouillage moderne, flexible et sécurisée.
 
 Le système :
-1. Attend un signal (bouton ou capteur PIR).
+1. Attend un signal du bouton poussoir.
 2. Lance la reconnaissance faciale pendant quelques secondes.
 3. Si le visage est reconnu → ouverture du verrou + notification.
 4. Sinon → notification d’échec envoyée à l’application mobile.
-5. Après un délai sans action, retour à l’écran de veille.
+5. Après un délai sans action, retour à l’écran d'accueil.
 
 ---
 
@@ -53,20 +53,17 @@ Le système :
 ### 📲 Application mobile
 - Contrôle du verrou à distance  
 - Réception des notifications  
-- Interface simple et intuitive (Design inspiré de ton prototype oral)
-
+- Interface simple et intuitive
+  
 ### 🧱 Modules matériels
 | Module | Rôle |
 |---------|------|
 | Raspberry Pi 5 | Unité centrale du système |
-| Caméra infrarouge | Reconnaissance faciale |
+| Caméra | Reconnaissance faciale |
 | Écran 3.5” | Interface utilisateur |
 | Bouton poussoir | Déclencheur principal |
-| Capteur PIR | Détection de présence réelle |
 | Arduino | Gestion du digicode |
 | DFPlayer Mini | Sons d’ouverture / fermeture |
 
 ---
-
-## 🧰 Architecture du projet
 
