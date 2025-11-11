@@ -114,7 +114,7 @@ FaciLock/
 │   ├── icon/
 │   ├── tetes/
 │   └── requirements.txt
-├── mobile_app/           # Application mobile (Flutter ou React Native)
+├── mobile_app/           # Application mobile (React Native)
 │   ├── lib/
 │   └── pubspec.yaml
 ├── docs/                 # Images, schémas, ressources
@@ -129,7 +129,7 @@ FaciLock/
 ## 👤 Auteur
 
 **Constant Segretain**  
-🎓 Élève en **Bac Pro SN** — futur **BTS SIO SISR (Cybersécurité)**  
+🎓 Élève en **BTS SIO SISR**  
 📅 Année : 2025  
 📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
 🌐 [github.com/constantsegretain@gmail.com](https://github.com/constantsegretain@gmail.com)
