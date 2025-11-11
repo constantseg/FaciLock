@@ -30,7 +30,8 @@ Le système :
 4. Sinon → notification d’échec envoyée à l’application mobile.
 5. Après un délai sans action, retour à l’écran d'accueil.
 
-###Schéma plus représentatif
+###Schéma plus représentatif de l'algorithme
+![Schéma de l'algorithme](docs/schema-simplifier-algorithme-backend.png)
 
 ---
 
