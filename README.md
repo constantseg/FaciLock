@@ -154,6 +154,9 @@ FaciLock/
   <img src="docs/ecran-raspberry.png" width="400" alt="ecran raspberry">
 </p>
 
+<p>
+  <img src="digicode-example_1.mp4" width="400" alt="digicode example">
+</p>
 
 ## 👤 Auteur
 
