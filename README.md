@@ -158,7 +158,7 @@ FaciLock/
 ## 👤 Auteur
 
 **Constant Segretain**  
-🎓 Élève en **Bac Pro SN** — futur **BTS SIO SISR (Cybersécurité)**  
+🎓 Élève en **BTS SIO SISR**  
 📅 Année : 2025  
 📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
 🌐 [github.com/ConstantSeg](https://github.com/ConstantSeg)
