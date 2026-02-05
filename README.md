@@ -156,7 +156,8 @@ FaciLock/
 </p>
 
 <p>
-    <video src="https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931" width="400" alt="Regarder la démo FaciLock">
+  Exemple du fonctionnement
+    <video src="https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931" width="400" alt="Exemple Digicode FaciLock">
 </p>
 
 ## 👤 Auteur
