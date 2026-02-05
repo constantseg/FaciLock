@@ -156,8 +156,9 @@ FaciLock/
 </p>
 
 <p>
-  <img src="[![Texte alternatif](https://img.youtube.com/vi/hScLT8Ak5Ds/0.jpg)](https://youtube.com/shorts/hScLT8Ak5Ds?feature=share)" width="400">
-  [![Texte alternatif](https://img.youtube.com/vi/hScLT8Ak5Ds/0.jpg)](https://youtube.com/shorts/hScLT8Ak5Ds?feature=share)
+  <a href="https://youtube.com/shorts/hScLT8Ak5Ds">
+    <img src="https://img.youtube.com/vi/hScLT8Ak5Ds/0.jpg" alt="Vidéo de démonstration FaciLock" width="400">
+  </a>
 </p>
 
 ## 👤 Auteur
