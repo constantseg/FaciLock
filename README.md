@@ -1,3 +1,9 @@
+<div align="center">
+  <p>
+    🇫🇷 <b>Français</b> | <a href="README_en.md">🇬🇧 English</a>
+  </p>
+</div>
+
 # 🔒 FaciLock — Système de verrouillage connecté intelligent
 
 <p align="center">
