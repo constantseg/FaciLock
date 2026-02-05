@@ -157,7 +157,11 @@ FaciLock/
 
 <p>
   <a href="https://youtube.com/shorts/hScLT8Ak5Ds">
-    <img src="https://img.youtube.com/vi/hScLT8Ak5Ds/maxresdefault.jpg" width="400" alt="Regarder la démo FaciLock">
+    <img src="https://img.youtube.com/vi/hScLT8Ak5Ds/maxr
+
+https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931
+
+esdefault.jpg" width="400" alt="Regarder la démo FaciLock">
     <br>
     ▶️ Cliquez pour voir la démonstration vidéo
   </a>
