@@ -1,3 +1,9 @@
+<div align="center">
+  <p>
+    <a href="README.md">🇫🇷 Français</a> | 🇬🇧 <b>English</b>
+  </p>
+</div>
+
 # 🔒 FaciLock — Smart Connected Locking System
 
 <p align="center">
