@@ -7,7 +7,8 @@
 > Un système de sécurité moderne basé sur la **reconnaissance faciale**, le **contrôle mobile** et des **modules embarqués sur Raspberry Pi**.
 
 ---
-
+### NOTE - Ce projet a été réalisé en juin 2025 lors de mon bac pro système numérique. Fait avec les outils et les connaissances que j'avais à l'époque 
+### Ce projet n'est pas maintenu
 ## 🌟 Projet en un coup d’œil
 
 **FaciLock** est un système de sécurité intelligent qui combine :
