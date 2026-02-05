@@ -157,7 +157,9 @@ FaciLock/
 
 <p>
   <a href="https://youtube.com/shorts/hScLT8Ak5Ds">
-    <img src="https://img.youtube.com/vi/hScLT8Ak5Ds/0.jpg" alt="Vidéo de démonstration FaciLock" width="400">
+    <img src="https://img.youtube.com/vi/hScLT8Ak5Ds/maxresdefault.jpg" width="400" alt="Regarder la démo FaciLock">
+    <br>
+    ▶️ Cliquez pour voir la démonstration vidéo
   </a>
 </p>
 
