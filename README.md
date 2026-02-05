@@ -159,8 +159,7 @@ FaciLock/
 
 <p>
   Exemple du fonctionnement
-    <video src="https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931" width="400" alt="Exemple Digicode FaciLock">
-<P/>
+  "https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931"
 <P>
 <video src="https://github.com/user-attachments/assets/c78db34c-b6a0-4d19-991c-1e6d8f9cd817
 " width="400" alt="Exemple Digicode FaciLock">
