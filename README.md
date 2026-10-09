@@ -185,6 +185,10 @@ https://github.com/user-attachments/assets/aa9d5f4c-af0a-4c98-b0aa-f1e18a58ad64
 📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
 🌐 [github.com/ConstantSeg](https://github.com/ConstantSeg)
 
+### Contributeurs :
+**Tom Maudet**
+Rôle : Hardware et prototype physique
+🌐 [github.com/T0myto](https://github.com/T0myto)
 ---
 
 > _« Un projet mêlant sécurité, intelligence et innovation — la clé, c’est vous. »_
