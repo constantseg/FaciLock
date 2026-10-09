@@ -177,20 +177,17 @@ https://github.com/user-attachments/assets/aa9d5f4c-af0a-4c98-b0aa-f1e18a58ad64
 
 
 
-## 👤 Auteur
+## 👥 Équipe du projet
 
-**Constant Segretain**  
-🎓 Élève en **BTS SIO SISR**  
-📅 Année : 2025  
-📫 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)  
-🌐 [github.com/ConstantSeg](https://github.com/ConstantSeg)
+### Auteur principal
+* **Constant Segretain** — Élève en BTS SIO SISR (2025)
+  * 📧 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)
+  * 🌐 [GitHub : ConstantSeg](https://github.com/ConstantSeg)
 
-
-## Contributeurs :
-
-**Tom Maudet**
-Rôle : Hardware et prototype physique
-🌐 [github.com/T0myto](https://github.com/T0myto)
+### Contributeur
+* **Tom Maudet**
+  * 🔌 **Rôle :** Conception de la connectique hardware et réalisation du prototype physique
+  * 🌐 [github.com/T0myto](https://github.com/T0myto)
 
 ---
 
