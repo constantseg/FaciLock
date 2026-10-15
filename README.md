@@ -116,5 +116,5 @@ https://github.com/user-attachments/assets/aa9d5f4c-af0a-4c98-b0aa-f1e18a58ad64
 
 ## Auteurs
 
-- **Constant Segrétain** : logiciel (backend, Arduino, application mobile) — [GitHub](https://github.com/ConstantSeg) · [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)
+- **Constant Segrétain** : logiciel (backend, Arduino, application mobile) — [GitHub](https://github.com/ConstantSeg)
 - **Tom Maudet** : câblage et réalisation du prototype — [GitHub](https://github.com/T0myto)
