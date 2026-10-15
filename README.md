@@ -1,169 +1,112 @@
-<div align="center">
-  <p>
-    🇫🇷 <b>Français</b> | <a href="README_en.md">🇬🇧 English</a>
-  </p>
-</div>
+<p align="center">
+  <b>Français</b> | <a href="README_en.md">English</a>
+</p>
 
-# 🔒 FaciLock — Système de verrouillage connecté intelligent
+# FaciLock
 
 <p align="center">
   <img src="docs/banniere-facilock.png" alt="Bannière FaciLock">
 </p>
 
-> Un système de sécurité moderne basé sur la **reconnaissance faciale**, le **contrôle mobile** et des **modules embarqués sur Raspberry Pi**.
+Serrure connectée à reconnaissance faciale, construite autour d'un Raspberry Pi 5, d'un Arduino (digicode, écran LCD, son) et d'une application mobile React Native.
 
----
-### 🗒️ NOTE - Ce projet a été réalisé en juin 2025 lors de mon bac pro système numérique. Fait avec les outils et les connaissances que j'avais à l'époque 
-### ⚠️ Ce projet n'est pas maintenu
-## 🌟 Projet en un coup d’œil
+> [!NOTE]
+> Projet réalisé en juin 2025 dans le cadre de mon Bac Pro Systèmes Numériques, avec les outils et les connaissances que j'avais à ce moment-là. Il n'est plus maintenu.
 
-**FaciLock** est un système de sécurité intelligent qui combine :
-- la **reconnaissance faciale** pour authentifier les utilisateurs,
-- un **digicode** et un **bouton physique** pour le contrôle manuel,
-- une **application mobile** pour le pilotage à distance et les alertes,
-- et plusieurs **modules matériels** pour l’interactivité (écran, son, etc.).
+## Sommaire
 
----
+- [Fonctionnement](#fonctionnement)
+- [Architecture](#architecture)
+- [Matériel](#matériel)
+- [API](#api)
+- [Arborescence](#arborescence)
+- [Démonstration](#démonstration)
+- [Auteurs](#auteurs)
 
-## 🎯 Objectifs du projet
+## Fonctionnement
 
-- 🔍 Identifier automatiquement les utilisateurs autorisés grâce à la **reconnaissance faciale**.  
-- 🔘 Permettre un **contrôle manuel** via un bouton ou un digicode.  
-- 📱 **Notifier en temps réel** l’utilisateur en cas d’accès refusé.  
-- 🔑 **Contrôler et gérer l’accès** directement depuis l’application mobile.  
-- 🧩 Ajouter des modules pour enrichir le système :
-  - 🎵 **DFPlayer Mini** pour les effets sonores
-  - 🖥️ **Écran LCD** pour l’affichage d’informations
-  - 🔢 **Arduino** pour la gestion du digicode
+La porte peut être ouverte de trois façons : par reconnaissance faciale, par code sur le digicode, ou à distance depuis l'application mobile.
 
----
-
-## 🧠 Description du projet
-
-**FaciLock** a été conçu sur un **Raspberry Pi 5 (8 Go)** pour offrir une solution de verrouillage connectée et sécurisée.
-
-### 🔄 Fonctionnement général
-1. Le système est en veille et affiche un écran d’accueil.  
-2. Lorsqu’un **visiteur appuie sur le bouton**, la caméra s’active.  
-3. Le système lance la **reconnaissance faciale** pendant quelques secondes.  
-4. ✅ Si un visage autorisé est reconnu → **déverrouillage + notification de succès**.  
-5. ❌ Sinon → **notification d’échec** envoyée à l’application mobile.  
-6. ⏱️ Après un délai sans action, le système revient automatiquement à l’accueil.
-
----
-
-### 🧭 Schéma de l’algorithme du backend
+1. Au repos, le Raspberry Pi affiche un écran d'accueil avec l'état du verrou.
+2. Un appui sur le bouton active la caméra pendant quelques secondes.
+3. Le visage filmé est comparé aux visages enregistrés dans `tetes/`.
+4. S'il est reconnu, le relais déverrouille la porte et un message s'affiche sur le LCD.
+5. Sinon, une courte vidéo du visiteur est enregistrée et une notification push est envoyée sur le téléphone.
+6. La porte se reverrouille automatiquement, puis le système revient à l'écran d'accueil.
 
 <p align="center">
-  <img src="docs/schema-simplifier-algorithme-backend.png" width="700" alt="Schéma simplifié de l'algorithme du backend">
+  <img src="docs/schema-simplifier-algorithme-backend.png" width="700" alt="Algorithme simplifié du backend">
 </p>
 
----
+## Architecture
 
-## ⚙️ Technologies utilisées
+| Partie | Rôle | Technologies |
+|--------|------|--------------|
+| [`backend/raspberrypi`](backend/raspberrypi/README.md) | Reconnaissance faciale, pilotage du relais et du bouton, API REST, notifications | Python, Flask, OpenCV, face_recognition, gpiozero, pyserial |
+| [`backend/arduino`](backend/arduino) | Digicode 4x4, écran LCD I2C, lecteur audio DFPlayer Mini | C++ (Arduino) |
+| [`mobile_app`](mobile_app/README.md) | Ouverture à distance, historique des visiteurs inconnus, gestion des visages autorisés | React Native, Expo |
 
-### 🧩 Backend (Raspberry Pi)
+Le Raspberry Pi et l'Arduino communiquent par liaison série (USB). L'application mobile interroge l'API Flask en HTTP et reçoit l'état du verrou en temps réel via Server-Sent Events.
 
-- **Langage :** Python  
-- **Librairies principales :**
-  - `face_recognition`
-  - `opencv-python`
-  - `flask`
-  - `gpiozero`
-  - `pyserial`
-  - `requests`
-- **API REST Flask :**
+## Matériel
 
-| Méthode | Endpoint | Description |
-|----------|-----------|-------------|
-| `POST` | `/unlock` | Déverrouille la porte manuellement |
-| `GET` | `/notifications` | Liste les vidéos capturées des visiteurs inconnus |
-| `DELETE` | `/notifications/<video_id>` | Supprime une vidéo/notification |
+| Composant | Utilisation |
+|-----------|-------------|
+| Raspberry Pi 5 (8 Go) | Unité centrale |
+| Caméra infrarouge | Capture des visages |
+| Écran 3,5" | Interface locale |
+| Bouton poussoir | Déclenche la reconnaissance |
+| Relais | Commande de la gâche |
+| Arduino + clavier 4x4 + LCD 16x2 | Digicode |
+| DFPlayer Mini | Sons de verrouillage / déverrouillage |
+
+<p align="center">
+  <img src="docs/Schema-cablage-simple.png" width="700" alt="Schéma de câblage simplifié">
+</p>
+
+## API
+
+Le serveur Flask écoute sur le port `5000`. Chaque requête doit transmettre le jeton défini dans `VIDEO_TOKEN` (`app.py`) via le paramètre `?token=`.
+
+| Méthode | Route | Description |
+|---------|-------|-------------|
+| `POST` | `/unlock` | Déverrouille la porte |
+| `GET` | `/stream` | État du verrou en temps réel (SSE) |
+| `GET` | `/notifications` | Liste les vidéos des visiteurs inconnus |
+| `DELETE` | `/notifications/<video_id>` | Supprime une vidéo |
+| `GET` | `/get_video` | Télécharge une vidéo |
 | `GET` | `/authorized` | Liste les personnes autorisées |
-| `POST` | `/authorized` | Ajoute une personne avec ses images (base64) |
+| `POST` | `/authorized` | Ajoute une personne (images en base64) |
 | `PUT` | `/authorized/<old_name>` | Renomme une personne |
 | `DELETE` | `/authorized/<name>` | Supprime une personne |
-| `GET` | `/authorized/<name>/images` | Liste les images associées à un visage |
-| `GET` | `/authorized/<name>/image` | Récupère une image spécifique |
-| `DELETE` | `/authorized/<name>/image` | Supprime une image spécifique |
-| `POST` | `/authorized_capture` | Capture directement des images depuis la caméra |
-| `POST` | `/api/register_push_token` | Enregistre un token Expo pour les notifications push |
-| `GET` | `/stream` | Envoie en temps réel l’état du verrou (`lock_status`) via SSE |
+| `GET` | `/authorized/<name>/images` | Liste les images d'une personne |
+| `GET` | `/authorized/<name>/image` | Récupère une image |
+| `DELETE` | `/authorized/<name>/image` | Supprime une image |
+| `POST` | `/authorized_capture` | Prend des photos avec la caméra du Pi |
+| `POST` | `/api/register_push_token` | Enregistre un jeton de notification Expo |
 
-> Toutes les routes nécessitent un **token de sécurité** :  
-> `?token=afsfr-356hytjdhiy-huy5429876njyu-y-gfdrsertgry`
+Détails et installation : [`backend/raspberrypi/README.md`](backend/raspberrypi/README.md).
 
-📘 Voir les détails complets → [`backend/raspberrypi/README.md`](backend/raspberrypi/README.md)
-
----
-
-### 📲 Application mobile
-
-- Contrôle du verrou à distance  
-- Réception des notifications push (via Expo)  
-- Interface intuitive et claire  
-- Communication directe avec le serveur Flask du Raspberry Pi  
-
-📘 Voir l’app mobile → [`mobile_app/README.md`](mobile_app/README.md)
-
----
-
-### 🧱 Modules matériels
-
-| Module | Rôle |
-|---------|------|
-| **Raspberry Pi 5** | Unité centrale du système |
-| **Caméra infrarouge** | Reconnaissance faciale |
-| **Écran 3.5”** | Interface utilisateur principale |
-| **Bouton poussoir** | Déclenchement de la reconnaissance |
-| **Arduino** | Gestion du digicode |
-| **DFPlayer Mini** | Effets sonores (verrouillage/déverrouillage) |
-
----
-
-### 🔌 Schéma simplifié du câblage
-
-<p align="center">
-  <img src="docs/Schema-cablage-simple.png" width="700" alt="Schéma simplifié du câblage du système">
-</p>
-
----
-
-## 📁 Arborescence du projet
+## Arborescence
 
 ```
 FaciLock/
 ├── backend/
-│   ├── arduino/          # Arduino
-|   |   ├── digicode.ino
-|   |   ├── lcd-digicode-audio.ino
-│   |   └── lcd-digicode.ino
-|   └── raspberrypi       # Serveur Flask + reconnaissance faciale
-|       ├── app.py
-|       ├── icon/
-│       ├── tetes/
-│       ├── requirements.txt
-|       └── ...
-├── mobile_app/           # Application mobile (React Native)
-│   ├── app/
-│   ├── assets/
-|   └── ...
-├── docs/                 # Images, schémas, ressources
-│   ├── banniere-facilock.png
-│   ├── schema-simplifier-algorithme-backend.png
-│   └── Schema-cablage-simple.png
-└── README.md             # Présentation du projet
+│   ├── arduino/              # Sketches du digicode (avec ou sans LCD / audio)
+│   └── raspberrypi/          # Serveur Flask et reconnaissance faciale
+│       ├── app.py
+│       ├── icon/             # Icônes de l'interface locale
+│       ├── tetes/            # Un dossier d'images par personne autorisée
+│       └── requirements.txt
+├── mobile_app/               # Application React Native (Expo)
+└── docs/                     # Schémas et images
 ```
 
----
+## Démonstration
 
-<p>
-  <img src="docs/ecran-raspberry.png" width="400" alt="ecran raspberry">
+<p align="center">
+  <img src="docs/ecran-raspberry.png" width="400" alt="Écran du Raspberry Pi">
 </p>
-
-
-
-## Exemple de fonctionnement : 
 
 https://github.com/user-attachments/assets/030c9b42-d527-4f9c-b894-ffae5ed32931
 
@@ -171,24 +114,7 @@ https://github.com/user-attachments/assets/c78db34c-b6a0-4d19-991c-1e6d8f9cd817
 
 https://github.com/user-attachments/assets/aa9d5f4c-af0a-4c98-b0aa-f1e18a58ad64
 
+## Auteurs
 
-
-
-
-
-
-## 👥 Équipe du projet
-
-### Auteur principal
-* **Constant Segretain** — Élève en BTS SIO SISR (2025)
-  * 📧 [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)
-  * 🌐 [GitHub : ConstantSeg](https://github.com/ConstantSeg)
-
-### Contributeur
-* **Tom Maudet**
-  * 🔌 **Rôle :** Conception de la connectique hardware et réalisation du prototype physique
-  * 🌐 [github.com/T0myto](https://github.com/T0myto)
-
----
-
-> _« Un projet mêlant sécurité, intelligence et innovation — la clé, c’est vous. »_
+- **Constant Segrétain** : logiciel (backend, Arduino, application mobile) — [GitHub](https://github.com/ConstantSeg) · [constantsegretain@gmail.com](mailto:constantsegretain@gmail.com)
+- **Tom Maudet** : câblage et réalisation du prototype — [GitHub](https://github.com/T0myto)
