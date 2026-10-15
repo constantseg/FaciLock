@@ -1,73 +1,50 @@
-# 📱 Facilock — Application Mobile
+# FaciLock — Application mobile
 
-> **Contrôlez votre serrure connectée depuis votre smartphone.**  
-> L’application mobile Facilock permet de piloter le système de verrouillage intelligent développé sur Raspberry Pi : ouverture à distance, alertes en temps réel et gestion des accès.
-
----
-
-## 🎯 Objectifs de l’application
-
-- 🔓 **Déverrouiller / verrouiller** la porte à distance via une API REST.
-- 🚨 **Recevoir des notifications** lorsqu’une personne non reconnue est détectée.
-- 👤 **Consulter la liste des utilisateurs autorisés**.
-- 🧩 Interface simple et moderne, adaptée au projet **Facilock** (sécurité connectée via Raspberry Pi).
-
----
-
-## 🧠 Fonctionnement général
-
-L’application communique avec le **serveur Flask** du Raspberry Pi à travers une **API REST sécurisée**.
-
-**Principales routes API utilisées :**
-| Méthode | Endpoint | Description |
-|----------|-----------|-------------|
-| `POST` | `/door/open` | Ouvre la serrure |
-| `GET` | `/notifications` | Récupère les notifications en attente |
-| `DELETE` | `/notifications` | Supprime les notifications |
-| `GET` | `/persons` | Liste les utilisateurs enregistrés |
-| `POST` | `/persons` | Ajoute un nouveau visage |
-
----
-## 🧰 Technologies utilisées
-
-| Domaine | Outils / Langages |
-|----------|-------------------|
-| **Framework mobile** | React Native / Expo |
-| **Communication** | API REST (HTTP / JSON) |
-| **Notifications** | Expo Notifications |
-| **Design** | Material Design, minimal et clair |
-
----
-
-## 🧭 Fonctionnalités principales
-
-### 🔐 Ouverture de la porte
-- Bouton central « 🔓 Déverrouiller »
-- Appel du endpoint `/door/open`
-- Animation d’état (ouvert / fermé)
-
-### 🚨 Notifications
-- Réception d’une alerte si un visage inconnu est détecté.
-- Historique des alertes accessible dans l’application.
-
-### 👤 Gestion des utilisateurs
-- Liste des personnes autorisées
-- Possibilité d’ajouter ou supprimer un utilisateur depuis l’app (selon droits)
-
-### ⚙️ Paramètres
-- Configuration de l’adresse IP / API du serveur Flask.
-  - Modifier les variables `BASE_URL` *(ip ou url du serveur flask)* et `TOKEN` *(token du serveur flask)* dans les fichiers `authorized.tsx`, `historique.tsx` et `index.tsx` dans `/app/(tabs)/`
-
-
-
----
-
+Application React Native (Expo) pour piloter FaciLock à distance. Elle communique avec l'API Flask du [backend Raspberry Pi](../backend/raspberrypi/README.md).
 
 <p align="center">
-  <img src="/docs/design_app.png" alt="Design de l'application mobile">
+  <img src="../docs/design_app.png" alt="Captures de l'application">
 </p>
 
----
+## Écrans
 
-## 🚀 Installation
+| Onglet | Fichier | Contenu |
+|--------|---------|---------|
+| Accueil | `app/(tabs)/index.tsx` | État du verrou en direct (SSE) et bouton de déverrouillage |
+| Historique | `app/(tabs)/historique.tsx` | Vidéos des visiteurs inconnus, lecture et suppression |
+| Autorisés | `app/(tabs)/authorized.tsx` | Liste des personnes autorisées : ajout, renommage, suppression, gestion des photos, capture depuis la caméra du Pi |
 
+Au lancement, l'application enregistre son jeton de notification auprès du serveur (`/api/register_push_token`) pour recevoir les alertes « Visiteur inconnu ».
+
+## Configuration
+
+L'adresse du serveur et le jeton d'API sont définis en dur au début de chacun des trois fichiers d'onglets :
+
+```ts
+const BASE_URL = 'https://app.exemple.com'; // adresse du serveur Flask
+const TOKEN = 'CHANGEME';                   // valeur de VIDEO_TOKEN dans app.py
+```
+
+## Installation
+
+Prérequis : Node.js, et Android Studio ou Xcode pour compiler le client de développement (l'application utilise `expo-dev-client` et Firebase, elle ne fonctionne pas dans Expo Go).
+
+```bash
+cd mobile_app
+npm install
+npx expo run:android   # ou npx expo run:ios
+```
+
+Pour les lancements suivants :
+
+```bash
+npm start
+```
+
+## Stack
+
+- Expo SDK 53, Expo Router
+- axios pour les appels HTTP
+- react-native-event-source pour l'état du verrou en direct
+- Expo Notifications et Firebase Messaging pour les notifications push
+- expo-av pour la lecture des vidéos
